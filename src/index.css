@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-fixed bg-cover bg-center text-white font-poppins;
+    background-image: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg border border-white border-opacity-20 rounded-xl;
+  }
+  .btn {
+    @apply px-4 py-2 rounded-md transition-all duration-300 ease-in-out font-semibold;
+  }
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white;
+  }
+  .nav-link {
+    @apply text-gray-200 hover:text-white transition-colors duration-300;
+  }
+}
+
+.content-wrapper {
+  @apply bg-black bg-opacity-50 min-h-screen;
+}
+
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.5s ease-in-out;
+}
+
+/* Ensure text is visible in dropdowns */
+select option {
+  @apply bg-gray-800 text-white;
+}
